@@ -273,7 +273,7 @@
 
         if (!isDeleting && currentCharIndex === currentWord.length) {
 
-            setTimeout(() => (isDeleting = true), 1000);
+            setTimeout(() => (isDeleting = true), 500);
         } else if (isDeleting && currentCharIndex === 0) {
             isDeleting = false;
             currentWordIndex = (currentWordIndex + 1) % words.length;
