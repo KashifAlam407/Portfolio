@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Kashif Alam | Robotics Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-body: #ffffff;
+            --bg-card: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+            --nav-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        [data-theme="dark"] {
+            --bg-body: #0a0f1a;
+            --bg-card: #161e2d;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #1e293b;
+            --nav-bg: rgba(10, 15, 26, 0.95);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            background-color: var(--bg-body); 
+            color: var(--text-main); 
+            line-height: 1.6; 
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Floating Sidebar - Hidden on small mobile for better UX */
+        .sidebar { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
+        .sidebar a { background: var(--bg-card); color: var(--text-main); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-decoration: none; transition: 0.3s; border: 1px solid var(--border); }
+        .sidebar a:hover { background: var(--primary); color: white; transform: translateX(-5px); }
+
+        /* Header */
+        header { min-height: 50vh; background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('/background.png'); background-size: cover; background-position: center; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; padding: 20px; }
+        header h1 { font-size: clamp(2rem, 8vw, 3.5rem); line-height: 1.2; }
+        header p { font-family: 'Space Mono', monospace; color: #94a3b8; font-size: clamp(1rem, 4vw, 1.2rem); margin-top: 10px; }
+
+        /* Nav */
+        nav { background: var(--nav-bg); padding: 1rem; position: sticky; top: 0; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); z-index: 999; backdrop-filter: blur(10px); }
+        nav a { text-decoration: none; color: var(--text-main); font-weight: 600; padding: 8px 12px; border-radius: 6px; transition: 0.3s; font-size: 0.75rem; text-transform: uppercase; }
+        nav a:hover { background-color: var(--primary); color: white; }
+
+        .theme-toggle { cursor: pointer; padding: 8px; border-radius: 50%; background: var(--border); color: var(--text-main); border: none; margin-left: 10px; display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; }
+
+        /* Container */
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+        section { margin-bottom: 80px; text-align: center; }
+        h2 { font-size: 2rem; margin-bottom: 40px; }
+        h2::after { content: ''; display: block; width: 50px; height: 4px; background: var(--primary); margin: 10px auto; }
+
+        /* Project Rows - Responsive Fix */
+        .project-row { display: flex; align-items: center; gap: 40px; margin-bottom: 60px; text-align: left; }
+        .project-row.alt { flex-direction: row-reverse; }
+
+        .project-text { flex: 1; }
+        .project-text h3 { font-size: 1.5rem; color: var(--primary); margin-bottom: 12px; }
+        .project-text p { color: var(--text-muted); font-size: 0.95rem; }
+
+        .video-box { flex: 1.2; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); aspect-ratio: 16/9; background: #000; width: 100%; }
+        .video-link-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; cursor: pointer; }
+        iframe { width: 100%; height: 100%; border: none; pointer-events: none; }
+
+        /* Education & Skills */
+        .education-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .edu-card { background: var(--bg-card); padding: 25px; border-radius: 12px; border: 1px solid var(--border); text-align: left; }
+        
+        .skills-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .skill-pill { background: var(--primary); color: white; padding: 6px 15px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; }
+
+        /* Contact Form */
+        .contact-box { background: var(--bg-card); padding: clamp(20px, 5vw, 40px); border-radius: 15px; border: 1px solid var(--border); max-width: 600px; margin: 0 auto; text-align: left; }
+        .contact-box label { display: block; margin-top: 15px; font-weight: 600; font-size: 0.9rem; }
+        input, textarea { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-body); color: var(--text-main); font-family: inherit; }
+        
+        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; transition: 0.3s; text-align: center; }
+        .btn:hover { background: #1e40af; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3); }
+
+        footer { padding: 40px 20px; background: var(--bg-card); text-align: center; border-top: 1px solid var(--border); font-size: 0.9rem; }
+
+        /* Phone Screen Adjustments */
+        @media (max-width: 768px) {
+            .project-row, .project-row.alt { flex-direction: column; text-align: center; gap: 20px; }
+            .sidebar { position: static; transform: none; flex-direction: row; justify-content: center; margin-bottom: 20px; }
+            header { min-height: 40vh; }
+            section { margin-bottom: 50px; }
+            .container { padding-top: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Md Kashif Alam</h1>
+        <p>Robotics Software Engineer</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme">
+            <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+    </nav>
+
+    <div class="sidebar">
+        <a href="https://www.linkedin.com/in/md-kashif-alam-a55b19380/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/KashifAlam407" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://youtube.com/@electroboticsai" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <div class="container">
+        
+        <section id="about">
+            <h2>About Me</h2>
+            <p style="max-width: 700px; margin: 0 auto; color: var(--text-muted);">
+            I am a Robotics Software Engineer specializing in autonomous robots, robot control, and perception systems. My expertise includes ROS2, SLAM, navigation, computer vision, and embedded robotics.
+
+            I focus on designing and developing end-to-end robotic systems by integrating software, embedded hardware, sensors, and AI algorithms to solve real-world engineering problems. I have hands-on experience working with mobile robots, robotic manipulators, autonomous drones, surveillance-oriented quadruped robots, and robotic hands. My work includes LiDAR-based navigation, perception pipelines, and vision-driven human–robot interaction systems.
+            Through my work and my channel <strong>Electrobotics AI</strong>, I share practical robotics development, simulations, and experiments.
+            </p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <div class="edu-card">
+                    <h3>B.S. in Artificial Intelligence</h3>
+                    <p style="color: var(--primary); font-weight: 600;">2024 - 2028 | IIT Patna</p>
+                    <p style="font-size: 0.9rem; margin-top: 5px;">Specializing in AI and Cybersecurity.</p>
+                </div>
+                <div class="edu-card">
+                    <h3>B.S. in Computer Science</h3>
+                    <p style="color: var(--primary); font-weight: 600;">2024 - 2025 | IOI (PW) Bengaluru</p>
+                    <p style="font-size: 0.9rem; margin-top: 5px;">Foundation in scalable software systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-flex">
+                <span class="skill-pill">ROS2</span>
+                <span class="skill-pill">Rviz</span>
+                <span class="skill-pill">Gazebo</span>
+                <span class="skill-pill">Matlab</span>
+                <span class="skill-pill">Fusion360</span>
+                <span class="skill-pill">3D Designing</span>
+                <span class="skill-pill">3D Printing</span>
+                <span class="skill-pill">Simulation</span>
+                <span class="skill-pill">Robot Control</span>
+                <span class="skill-pill">Mobile Robot</span>
+                <span class="skill-pill">SystemIntegration</span>
+                <span class="skill-pill">Gesture Recognition</span>
+                <span class="skill-pill">Serial Communication</span>
+                <span class="skill-pill">I2C</span>
+                <span class="skill-pill">SPI</span>
+                <span class="skill-pill">UART</span>
+                <span class="skill-pill">IoT</span>
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">C++</span>
+                <span class="skill-pill">MicroPython</span>
+                <span class="skill-pill">CircuitPython</span>
+                <span class="skill-pill">OpenCV</span>
+                <span class="skill-pill">Mediapipe</span>
+                <span class="skill-pill">Embedded System</span>
+                <span class="skill-pill">Embedded Programming</span>
+                <span class="skill-pill">TensorFlow</span>
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">C++</span>
+                <span class="skill-pill">SLAM</span>
+                <span class="skill-pill">Computer Vision</span>
+                <span class="skill-pill">Arduino</span>
+                <span class="skill-pill">Linux</span>
+                <span class="skill-pill">Navigation Stack</span>
+                <span class="skill-pill">Git</span>
+                <span class="skill-pill">Arduino</span>
+                <span class="skill-pill">ESP32</span>
+                <span class="skill-pill">STM32</span>
+                <span class="skill-pill">Raspberrypi</span>
+                <span class="skill-pill">Microcontroller</span>
+                <span class="skill-pill">Microprocessor</span>
+                <span class="skill-pill">Lidar</span>
+                <span class="skill-pill">CyberSecurity</span>
+                <span class="skill-pill">AI</span>
+                <span class="skill-pill">Networking</span>
+                <span class="skill-pill">Thermal Sensor</span>
+                <span class="skill-pill">Sensor Interfacing</span>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+
+            <div class="project-row">
+                <div class="project-text">
+                    <h3>Autonomous Maze Solver</h3>
+                    <p>A LiDAR-based navigation robot using the ROS2 Nav2 stack to navigate complex indoor environments autonomously. Features real-time obstacle avoidance and path planning.</p>
+                </div>
+                <div class="video-box">
+                    <div class="video-link-overlay" onclick="window.open('https://youtube.com/@electroboticsai', '_blank')"></div>
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID_1&controls=0"></iframe>
+                </div>
+            </div>
+
+            <div class="project-row alt">
+                <div class="project-text">
+                    <h3>Hand Gesture Robotic Arm</h3>
+                    <p>Control of a 6-DOF industrial arm using MediaPipe and OpenCV for real-time human-robot interaction. Enables intuitive control without physical controllers.</p>
+                </div>
+                <div class="video-box">
+                    <div class="video-link-overlay" onclick="window.open('https://youtube.com/@electroboticsai', '_blank')"></div>
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID_2&controls=0"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2>Resume</h2>
+            <p style="margin-bottom: 20px; color: var(--text-muted);">View my full professional background and technical certifications.</p>
+            <a href="resume.pdf" download="Md_Kashif_Alam_Resume" class="btn">
+                <i class="fas fa-download"></i> Download My PDF Resume
+            </a>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-box">
+                <form action="https://formspree.io/f/mdkashifalam376@gmail.com" method="POST">
+                    <input type="hidden" name="_next" value="/thankyou.html">
+                    
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Let's talk about robotics..." required></textarea>
+                    
+                    <div style="margin-top: 20px; text-align: center;">
+                        <button type="submit" class="btn">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Md Kashif Alam | Electrobotics AI</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.setAttribute('data-theme', 'light');
+                icon.className = 'fas fa-moon';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                icon.className = 'fas fa-sun';
+            }
+        }
+    </script>
+</body>
+</html>
