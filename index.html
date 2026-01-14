@@ -395,8 +395,8 @@
 
         <section id="about">
             <h2>Technical Profile</h2>
-            <p
-                style="max-width: 800px; margin: 0 auto; text-align: justify; color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;" align="justify">
+            <p style="max-width: 800px; margin: 0 auto; text-align: justify; color: var(--text-muted); font-size: 1.1rem; line-height: 1.8;"
+                align="justify">
                 I am a <strong>Robotics Software Engineer</strong> focused on the intersection of autonomous navigation
                 and machine perception. My work centers on building end-to-end robotic solutions—from CAD design and
                 embedded firmware to high-level ROS2 navigation stacks.
@@ -497,11 +497,36 @@
                     <iframe src="https://www.youtube.com/embed/Y98mU27IoyA?autoplay=1&mute=1&loop=1"></iframe>
                 </div>
             </div>
+            <div class="project-row alt">
+                <div class="project-text">
+                    <h3>6-DOF Robotic Arm Motion Planning & Control using ROS 2 MoveIt</h3>
+
+                    <p align="justify">
+                        In this project, I designed and simulated a 6-joint (6-DOF) robotic manipulator using
+                        ROS 2. The robot was modeled using URDF and visualized in RViz, where the complete
+                        kinematic chain, joint frames, and links are rendered accurately. I integrated MoveIt
+                        for motion planning, enabling interactive goal setting, inverse kinematics solving,
+                        collision-aware trajectory planning, and smooth joint-space execution. The system
+                        demonstrates real-time planning and control of the robotic arm using MoveIt’s
+                        MotionPlanning interface, similar to industrial robotic manipulation workflows.
+                    </p>
+
+                    <div class="tech-stack">
+                        Stack: ROS 2, URDF, RViz, MoveIt, Joint Trajectory Control
+                    </div>
+                </div>
+
+                <div class="video-box">
+                    <iframe src="https://www.youtube.com/embed/F9Jmkpb1PWk?autoplay=0" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
 
             <div class="project-row">
                 <div class="project-text">
                     <h3>Quadruped Robot for Serveillance and Defense Support (Ongoing)</h3>
-                    <p align="justify">In this project, I’m developing a surveillance quadruped designed for high mobility in complex
+                    <p align="justify">In this project, I’m developing a surveillance quadruped designed for high
+                        mobility in complex
                         environments. Currently, I’ve successfully implemented and synchronized forward and backward
                         gait cycles using real-time motor control. By focusing on inverse kinematics and gait dynamics,
                         I’ve ensured the robot remains stable across different speeds. This serves as a strong
@@ -518,13 +543,14 @@
             <div class="project-row alt">
                 <div class="project-text">
                     <h3>Robotic Hand</h3>
-                    <p align="justify">In this project, I engineered a robotic hand system capable of real-time human gesture
-                            mimicry using a Computer Vision-based control loop. By leveraging OpenCV and MediaPipe, the
-                            system calculates the dynamic distance between the hand tips and MCP (metacarpophalangeal)
-                            joints to drive individual servo motors for each finger. This ensures high-fidelity movement
-                            synchronization between the user and the robotic hardware. My ultimate goal is to evolve
-                            this prototype into an affordable, high-performance prosthetic for individuals with
-                            disabilities, focusing on making assistive robotics both accessible and technically robust.
+                    <p align="justify">In this project, I engineered a robotic hand system capable of real-time human
+                        gesture
+                        mimicry using a Computer Vision-based control loop. By leveraging OpenCV and MediaPipe, the
+                        system calculates the dynamic distance between the hand tips and MCP (metacarpophalangeal)
+                        joints to drive individual servo motors for each finger. This ensures high-fidelity movement
+                        synchronization between the user and the robotic hardware. My ultimate goal is to evolve
+                        this prototype into an affordable, high-performance prosthetic for individuals with
+                        disabilities, focusing on making assistive robotics both accessible and technically robust.
                     </p>
                     <div class="tech-stack">Stack: MediaPipe, OpenCV, Python, Arduino, PCA9685</div>
                 </div>
@@ -535,7 +561,8 @@
             <div class="project-row">
                 <div class="project-text">
                     <h3>Serveillance Drone</h3>
-                    <p align="justify">This project involved the end-to-end engineering of a custom quadcopter, transitioning from an
+                    <p align="justify">This project involved the end-to-end engineering of a custom quadcopter,
+                        transitioning from an
                         F450 base to a high-stability carbon fiber frame. Controlled by a Pixhawk flight controller and
                         powered by BLDC motors, the system was refined through rigorous debugging of ESC calibration,
                         motor orientation, and electromagnetic interference. By resolving GPS altitude discrepancies and
@@ -552,13 +579,14 @@
             <div class="project-row alt">
                 <div class="project-text">
                     <h3>F-22 Raptor | Aircraft</h3>
-                    <p align="justify">In this project, I designed and built a scale F-22 Raptor to bridge the gap between
-                            theoretical fluid dynamics and real-world aviation. Using a high-KV BLDC motor for rapid
-                            thrust and a Flysky RC system, I explored how high-speed airflow interacts with airfoil
-                            profiles. A critical focus was mastering Center of Gravity (CoG) placement to ensure
-                            longitudinal stability. By balancing lift-to-drag ratios with precise control surface
-                            dynamics, I gained hands-on experience in how wing geometry and weight distribution dictate
-                            flight performance.</p>
+                    <p align="justify">In this project, I designed and built a scale F-22 Raptor to bridge the gap
+                        between
+                        theoretical fluid dynamics and real-world aviation. Using a high-KV BLDC motor for rapid
+                        thrust and a Flysky RC system, I explored how high-speed airflow interacts with airfoil
+                        profiles. A critical focus was mastering Center of Gravity (CoG) placement to ensure
+                        longitudinal stability. By balancing lift-to-drag ratios with precise control surface
+                        dynamics, I gained hands-on experience in how wing geometry and weight distribution dictate
+                        flight performance.</p>
                     <div class="tech-stack">Tech/Hardware: Center of Gravity, Airfoil, Aerodynamics, Fluid Dynamics,
                         Lightweight Thermocol Sheet, Bldc Motor, Transmitter and Receiver</div>
                 </div>
@@ -587,7 +615,8 @@
             <div class="project-row alt">
                 <div class="project-text">
                     <h3>Ornithopter (Ongoing)</h3>
-                    <p align="justify">In this project, I engineered a mechanical gearbox for an ornithopter system to mimic the
+                    <p align="justify">In this project, I engineered a mechanical gearbox for an ornithopter system to
+                        mimic the
                         biological kinematics of bird flight. By converting motor torque into synchronized flapping
                         cycles, I’ve created a platform for researching biomimetic aerodynamics and stealth-focused
                         surveillance. Unlike traditional drones, this system focuses on how airfoil geometry and
