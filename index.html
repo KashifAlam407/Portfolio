@@ -527,6 +527,72 @@
             </div>
 
             <!-- Projects Section -->
+
+            <div class="project-row">
+                <div class="project-text">
+                    <h3>ROS2 Nav2 Autonomous Navigation Stack</h3>
+
+                    <p align="justify">
+                        In this project, I implemented a complete autonomous navigation pipeline using the ROS2 Nav2
+                        stack.
+                        The system integrates localization (AMCL), global planning (NavFn), and local control (DWB
+                        controller)
+                        to enable a mobile robot to navigate to target goals in a simulated environment. I configured
+                        costmaps,
+                        behavior trees, and recovery behaviors to handle dynamic obstacles and ensure robust navigation.
+                        The robot uses LiDAR and odometry data for real-time localization and obstacle avoidance,
+                        demonstrating end-to-end autonomous navigation in Gazebo and RViz.
+                    </p>
+
+                    <div class="tech-stack">
+                        Stack: ROS2, Nav2, AMCL, DWB Controller, Behavior Trees, LiDAR, Odometry, RViz, Gazebo
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/KashifAlam407/ros2-nav2-navigation-stack" target="_blank"
+                            style="text-decoration: none;">
+                            🔗 View Code on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="video-box">
+                    <iframe src="https://www.youtube.com/embed/y7erTK9Ahqo?autoplay=0" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="project-row alt">
+                <div class="project-text">
+                    <h3>Trajectory Tracking Controller – ROS2</h3>
+
+                    <p align="justify">
+                        In this project, I built a trajectory tracking controller in ROS2 that allows a mobile robot
+                        to follow a given path smoothly. The controller receives a sequence of waypoints (trajectory)
+                        and continuously calculates the required linear and angular velocity to move the robot toward
+                        the next target point. It uses odometry data to track the robot’s current position and adjusts
+                        motion in real time to stay on the path. This project demonstrates how robots follow planned
+                        paths using control logic in a simulated environment.
+                    </p>
+
+                    <div class="tech-stack">
+                        Stack: ROS2, Python, Trajectory Control, Odometry, Geometry_msgs, RViz, Gazebo
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/KashifAlam407/ros2-trajectory-control" target="_blank"
+                            style="text-decoration: none;">
+                            🔗 View Code on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="video-box">
+                    <iframe src="https://www.youtube.com/embed/kwIiEaSYuWc?autoplay=0" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
             <div class="project-row">
                 <div class="project-text">
                     <h3>Custom DWA Local Planner – ROS2</h3>
@@ -753,8 +819,13 @@
         <section id="contact">
             <h2>Contact Me</h2>
             <div class="contact-box">
-                <form action="https://formspree.io/f/mdkashifalam376@gmail.com" method="POST">
-                    <input type="hidden" name="_next" value="/thankyou.html">
+                <form action="https://formspree.io/f/mwvrapyg" method="POST">
+
+                    <!-- Hidden fields -->
+                    <input type="hidden" name="_next" value="/https://yourusername.github.io/thankyou.html">
+                    <input type="hidden" name="_subject" value="New Portfolio Message">
+                    <input type="text" name="_gotcha" style="display:none">
+
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div>
                             <label>Full Name</label>
@@ -765,12 +836,17 @@
                             <input type="email" name="email" placeholder="Email" required>
                         </div>
                     </div>
+
                     <label>Message</label>
                     <textarea name="message" rows="5" placeholder="Project details or collaboration..."
                         required></textarea>
+
                     <div style="text-align: right;">
-                        <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                        <button type="submit" class="btn">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
                     </div>
+
                 </form>
             </div>
         </section>
